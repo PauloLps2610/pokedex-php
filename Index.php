@@ -1,5 +1,5 @@
 <?php
-include "Pokemon.php";
+include "controller/Pokemon.php";
 $controller = new Pokemon();
 
 if (isset($_POST["submit"])) {
@@ -26,11 +26,41 @@ if (isset($_POST["submit"])) {
 </head>
 
 <body>
+ <div class="container"> 
+    <div class="container__dex">
 
-        <img src="<?php echo $pokemon['sprites']['front_default']; ?>" alt="<?php echo $pokemon['name']; ?>">
-    <h2>
-        <?php echo $pokemon['id'] ?> </h2>
-    <h2><?php echo $pokemon['name'] ?></h2>
+
+    </div>
+    
+
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <?php if (isset($pokemon) && !empty($pokemon)) : ?>
+        <img src="<?php echo $pokemon['sprite'] ?>" alt="<?php echo $pokemon['name'] ?>">
+        <h2><?php echo $pokemon['id']?> </h2>
+        <h2><?php echo $pokemon['name']?></h2>
+    <?php endif; ?>
+
+    <div class="pokemon-Stats">
+        <?php foreach($pokemon['stats'] as $statName):?>
+            <label><?php echo $statName?></label>
+            <br>
+        <?php endforeach?>
+
+    </div>
+
     <!-- Formulário -->
     <form action="" method="post">
         <input class='input-pokemon' type="text" placeholder="Insira o nome ou ID do Pokémon" name='pokemon'>

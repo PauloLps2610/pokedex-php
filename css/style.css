@@ -1,3 +1,21 @@
+body{
+    background-color: #3a3f8d;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+
+.container__dex{
+    width: 40%;
+    height: 600px;
+    background-color: rgb(218, 21, 21);
+    border-radius: 30px;
+    box-shadow: inset 0 0 20px #000;
+}
+
 .input-pokemon{
     width: 200px;
     height: 50px;
